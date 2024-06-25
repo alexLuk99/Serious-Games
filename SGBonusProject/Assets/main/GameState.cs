@@ -7,9 +7,9 @@ using Newtonsoft.Json;
 public class GameState : MonoBehaviour
 {
     public List<Customer> customers;
-    public int totalScore = 0;
     public GameObject customerPrefab; // Referenz zum HumanMale_Character_FREE Prefab
     public GameObject textBubblePanel; // Referenz zur TextBubblePanel
+    public ScoreManager scoreManager; // Referenz zum ScoreManager
 
     private Customer currentCustomer;
     private float currentTimer;
@@ -42,13 +42,13 @@ public class GameState : MonoBehaviour
             {
                 currentCustomer = null;
                 orderCompleted = false;
-                totalScore += 1; // Punkte hinzufügen für eine erfüllte Bestellung
+                scoreManager.UpdateScore(1); // Punkte hinzufügen für eine erfüllte Bestellung
                 StartCoroutine(SpawnNextCustomer());
             }
             else if (currentTimer <= 0)
             {
                 currentCustomer = null;
-                totalScore -= 1; // Punkteabzug für nicht erfüllte Bestellung
+                scoreManager.UpdateScore(-1); // Punkteabzug für nicht erfüllte Bestellung
                 StartCoroutine(SpawnNextCustomer());
             }
         }
