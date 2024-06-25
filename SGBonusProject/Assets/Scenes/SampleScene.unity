@@ -429,9 +429,10 @@ GameObject:
   - component: {fileID: 1102717603}
   - component: {fileID: 1102717602}
   - component: {fileID: 1102717605}
+  - component: {fileID: 1102717606}
   m_Layer: 5
-  m_Name: Deck
-  m_TagString: Untagged
+  m_Name: FridgeDeck
+  m_TagString: Deck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -452,7 +453,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 547, y: -253}
+  m_AnchoredPosition: {x: 242, y: -253}
   m_SizeDelta: {x: 100, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!65 &1102717602
@@ -463,7 +464,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102717600}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -529,12 +530,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee117eea54e2e7044a7ffd0da7d59089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CardPrefab: {fileID: 1668373643}
   cards:
-  - {fileID: 1668373648}
-  - {fileID: 1668373648}
-  - {fileID: 1668373648}
-  - {fileID: 1668373648}
-  - {fileID: 1668373648}
+  - {fileID: 1668373643}
+  - {fileID: 1668373643}
+  - {fileID: 1668373643}
+  - {fileID: 1668373643}
+  - {fileID: 1668373643}
+--- !u!114 &1102717606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102717600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8890929d03da1684c9f27097ad0bda9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1186555599 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7632601698572676755, guid: 6f8150d75f4ba44769a0d7ab6a2d5161, type: 3}
+  m_PrefabInstance: {fileID: 6934141054076631164}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1186555601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186555599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96539a5fc2ef148ebb24959b4b599388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDeck: []
+  playerHand: []
+  dish:
+  - Spagetti
+  - Tomaten
+  - Oliven
+  - Bananen
+  - "H\xE4hnchen"
 --- !u!1 &1668373643
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,7 +588,7 @@ GameObject:
   - component: {fileID: 1668373647}
   - component: {fileID: 1668373648}
   m_Layer: 5
-  m_Name: Card
+  m_Name: CardPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -644,7 +683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50438b2695e104fc2b92b85f4024cf22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardName: 
+  repositoryPosition: 0
   imagePath: 
   imageSize: {x: 100, y: 100}
 --- !u!1 &2010348157

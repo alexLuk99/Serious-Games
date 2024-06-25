@@ -7,6 +7,8 @@ public class PlayerMain : MonoBehaviour
 
     public string[] playerDeck;
     public string[] playerHand;
+    public string[] dish;
+
     
     // Start is called before the first frame update
     void Start()
