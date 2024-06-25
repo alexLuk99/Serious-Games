@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class Deck : MonoBehaviour
 {
-    public GameObject CardPrefab;
+    public GameObject Card;
     public List<GameObject> cards = new List<GameObject>();
 
     void Start(){
@@ -15,7 +15,7 @@ public class Deck : MonoBehaviour
 
     void InitializeDeck() {
         for (int i = 0; i < 5; i++) {
-            GameObject newCard = Instantiate(CardPrefab, transform);
+            GameObject newCard = Instantiate(Card, transform);
             newCard.SetActive(false); // Starte mit deaktivierten Karten
             cards.Add(newCard);
             Debug.Log("Karte erstellt: " + newCard.name);

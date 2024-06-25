@@ -29,7 +29,7 @@ public class Card : MonoBehaviour
     {
         playerMain = FindObjectOfType<PlayerMain>();
         // Initialize cardName and imagePath
-        cardName = playerMain.dish[repositoryPosition];
+        cardName = "drakonische Strafen";
         imagePath = "cardImages/1";  // Example path, adjust as needed
 
         // Initialize references
@@ -48,7 +48,7 @@ public class Card : MonoBehaviour
         // Set text, image, and position
         SetText(cardName);
         SetImage(imagePath);
-        SetPosition(0.1f, 0.1f);  // Example position (10% from left, 10% from bottom)
+        //SetPosition(0.1f, 0.1f);  // Example position (10% from left, 10% from bottom)
     }
 
     // Update is called once per frame
