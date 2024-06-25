@@ -6,7 +6,10 @@ using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
-    public string cardName;
+
+    PlayerMain  playerMain;
+    public int repositoryPosition;
+    private string cardName;
     public string imagePath;
 
     // UI elements
@@ -24,8 +27,9 @@ public class Card : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerMain = FindObjectOfType<PlayerMain>();
         // Initialize cardName and imagePath
-        cardName = "Drakonische Strafen";
+        cardName = "drakonische Strafen";
         imagePath = "cardImages/1";  // Example path, adjust as needed
 
         // Initialize references
@@ -44,7 +48,7 @@ public class Card : MonoBehaviour
         // Set text, image, and position
         SetText(cardName);
         SetImage(imagePath);
-        SetPosition(0.1f, 0.1f);  // Example position (10% from left, 10% from bottom)
+        //SetPosition(0.1f, 0.1f);  // Example position (10% from left, 10% from bottom)
     }
 
     // Update is called once per frame
