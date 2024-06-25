@@ -1,0 +1,31 @@
+{
+    "gerichte": [
+      {
+        "name": "Kuchen",
+        "zutaten": [
+          "Mehl",
+          "Eier",
+          "Zucker",
+          "Butter"
+        ]
+      },
+      {
+        "name": "Kuchen",
+        "zutaten": [
+          "Mehl",
+          "Eier",
+          "Zucker",
+          "Butter"
+        ]
+      },
+      {
+        "name": "Kuchen",
+        "zutaten": [
+          "Mehl",
+          "Eier",
+          "Zucker",
+          "Butter"
+        ]
+      }
+    ]
+  }
