@@ -1965,7 +1965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 656b19571ab62d24bb1a71f837aeb26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardPrefab: {fileID: 1668373643}
+  Card: {fileID: 1668373643}
   handCardsParent: {fileID: 528493396}
   maxCards: 5
 --- !u!65 &1434516821
@@ -2246,7 +2246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50438b2695e104fc2b92b85f4024cf22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardName: test
+  repositoryPosition: 0
   imagePath: 
   imageSize: {x: 100, y: 100}
 --- !u!1001 &1670338844
