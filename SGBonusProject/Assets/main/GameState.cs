@@ -7,16 +7,17 @@ using Newtonsoft.Json;
 public class GameState : MonoBehaviour
 {
     public List<Customer> customers;
-    public GameObject customerPrefab; // Referenz zum HumanMale_Character_FREE Prefab
-    public GameObject textBubblePanel; // Referenz zur TextBubblePanel
-    public ScoreManager scoreManager; // Referenz zum ScoreManager
+    public GameObject customerPrefab;
+    public GameObject textBubblePanel;
+    public ScoreManager scoreManager;
+    public FridgeController fridgeController;
+    public CookingPot cookingPot;
 
     private Customer currentCustomer;
     private float currentTimer;
     private bool orderCompleted;
     private TextBubble textBubble;
 
-    // Start is called before the first frame update
     void Start()
     {
         textBubble = textBubblePanel.GetComponent<TextBubble>();
@@ -24,52 +25,32 @@ public class GameState : MonoBehaviour
         StartCoroutine(SpawnCustomers());
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (currentCustomer != null)
         {
             currentTimer -= Time.deltaTime;
+            textBubble.UpdateTimer(currentTimer);
 
-            // Update Timer in TextBubble
-            if (textBubble != null)
-            {
-                textBubble.timerText.text = $"Timer: {currentTimer:F1}";
-            }
-
-            // Überprüfen, ob die Bestellung erledigt ist
             if (orderCompleted)
             {
-                currentCustomer = null;
-                orderCompleted = false;
-                scoreManager.UpdateScore(1); // Punkte hinzufügen für eine erfüllte Bestellung
-                StartCoroutine(SpawnNextCustomer());
+                CompleteOrder();
             }
             else if (currentTimer <= 0)
             {
-                currentCustomer = null;
-                scoreManager.UpdateScore(-1); // Punkteabzug für nicht erfüllte Bestellung
-                StartCoroutine(SpawnNextCustomer());
+                FailOrder();
             }
         }
     }
 
     void LoadCustomersFromJson()
     {
-        // Laden der Datei als TextAsset aus dem Resources-Ordner
         TextAsset jsonFile = Resources.Load<TextAsset>("jsonStorage/customers");
-
         if (jsonFile != null)
         {
             string dataAsJson = jsonFile.text;
             CustomerList loadedData = JsonConvert.DeserializeObject<CustomerList>(dataAsJson);
             customers = new List<Customer>(loadedData.customers);
-
-            // Log-Ausgabe der Kunden
-            foreach (var customer in customers)
-            {
-                Debug.Log($"Name: {customer.name}, Instructions: {customer.instructions}, Order: {customer.order}, Timer: {customer.timer}");
-            }
         }
         else
         {
@@ -84,29 +65,43 @@ public class GameState : MonoBehaviour
 
     IEnumerator SpawnNextCustomer()
     {
-        yield return new WaitForSeconds(1); // Optional: Wartezeit zwischen Kunden
+        yield return new WaitForSeconds(1);
 
         if (customers.Count > 0)
         {
             currentCustomer = customers[0];
             currentTimer = currentCustomer.timer;
             customers.RemoveAt(0);
-
-            // Aktualisieren der TextBubble mit neuen Kundendaten
-            if (textBubble != null)
-            {
-                textBubble.SetText(currentCustomer.name, currentCustomer.instructions, currentCustomer.order, currentTimer);
-            }
+            textBubble.SetText(currentCustomer.name, currentCustomer.instructions, currentCustomer.order, currentTimer);
         }
     }
 
     public void CompleteOrder()
     {
-        orderCompleted = true;
+        scoreManager.UpdateScore(1);
+        StartCoroutine(SpawnNextCustomer());
+        currentCustomer = null;
+        orderCompleted = false;
+    }
+
+    public void FailOrder()
+    {
+        scoreManager.UpdateScore(-1);
+        StartCoroutine(SpawnNextCustomer());
+        currentCustomer = null;
+    }
+
+    public bool CheckOrder(string dish)
+    {
+        if (currentCustomer != null && dish == currentCustomer.order)
+        {
+            orderCompleted = true;
+            return true;
+        }
+        return false;
     }
 }
 
-[System.Serializable]
 public class Customer
 {
     public string name;
@@ -115,8 +110,7 @@ public class Customer
     public float timer;
 }
 
-[System.Serializable]
 public class CustomerList
 {
-    public Customer[] customers;
+    public List<Customer> customers;
 }

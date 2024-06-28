@@ -1,9 +1,8 @@
 using UnityEngine;
 
-public class CardSpawner : MonoBehaviour
+public class MouseClickDetector : MonoBehaviour
 {
-    public GameObject cardPrefab; // Referenz zum Karten-Prefab
-    public Transform spawnPoint; // Punkt, an dem die Karte gespawnt werden soll
+    public GameObject fridge;
 
     void Update()
     {
@@ -18,7 +17,7 @@ public class CardSpawner : MonoBehaviour
                 if (hit.transform.CompareTag("Fridge"))
                 {
                     Debug.Log("Fridge clicked"); // Debugging-Ausgabe
-                    SpawnCard();
+                    fridge.GetComponent<FridgeController>().OnClick();
                 }
             }
             else
@@ -26,11 +25,5 @@ public class CardSpawner : MonoBehaviour
                 Debug.Log("Raycast did not hit anything"); // Debugging-Ausgabe
             }
         }
-    }
-
-    void SpawnCard()
-    {
-        Debug.Log("Spawning card at: " + spawnPoint.position); // Debugging-Ausgabe
-        Instantiate(cardPrefab, spawnPoint.position, spawnPoint.rotation);
     }
 }

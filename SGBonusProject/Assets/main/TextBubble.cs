@@ -15,4 +15,9 @@ public class TextBubble : MonoBehaviour
         orderText.text = $"Order: {order}";
         timerText.text = $"Timer: {timer:F1}";
     }
+
+    public void UpdateTimer(float timer)
+    {
+        timerText.text = $"Timer: {timer:F1}";
+    }
 }

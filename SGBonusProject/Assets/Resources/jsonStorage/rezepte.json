@@ -7,7 +7,29 @@
           "Eier",
           "Zucker",
           "Butter"
-        ]
+        ],
+        "typ": "gericht",
+        "bild": "1"
+      },
+      {
+        "name": "Test",
+        "zutaten": [
+          "Milch"
+        ],
+        "typ": "gericht",
+        "bild": "1"
+      },
+      
+      {
+        "name": "Kuchen",
+        "zutaten": [
+          "Mehl",
+          "Eier",
+          "Zucker",
+          "Butter"
+        ],
+        "typ": "gericht",
+        "bild": "1"
       },
       {
         "name": "Kuchen",
@@ -16,16 +38,106 @@
           "Eier",
           "Zucker",
           "Butter"
-        ]
+        ],
+        "typ": "gericht",
+        "bild": "1"
       },
       {
-        "name": "Kuchen",
-        "zutaten": [
-          "Mehl",
-          "Eier",
-          "Zucker",
-          "Butter"
-        ]
+        "name": "Käse",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "1"
+      },
+      {
+        "name": "Milch",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "1"
+      },
+      {
+        "name": "Mehl",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "1"
+      },
+      {
+        "name": "Eier",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "1"
+      },
+      {
+        "name": "Zucker",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "1"
+      },
+      
+      {
+        "name": "Butter",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "1"
+      },
+      {
+        "name": "Salz",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "1"
+      },
+      {
+        "name": "Pfeffer",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "1"
+      },
+      {
+        "name": "Olivenöl",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "1"
+      },
+      {
+        "name": "Tomaten",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "1"
+      },
+      {
+        "name": "Zwiebeln",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "1"
+      },
+      {
+        "name": "Knoblauch",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "1"
+      },
+      {
+        "name": "Petersilie",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "1"
+      },
+      {
+        "name": "Basilikum",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "1"
+      },
+      {
+        "name": "Zitrone",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "1"
+      },
+      {
+        "name": "Sahne",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "1"
       }
     ]
   }

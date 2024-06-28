@@ -1,68 +1,124 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+using Newtonsoft.Json;
 
 public class FridgeController : MonoBehaviour
 {
-    public GameObject Card; // Das Prefab der Karte
-    public Transform handCardsParent; // Der Parent für die Handkarten
-    public int maxCards = 5; // Maximale Anzahl an Karten in der Hand
-    private int currentCardCount = 0; // Aktuelle Anzahl an instanziierten Karten
+    public GameObject cardPrefab;
+    public Transform handCardsParent;
+    public int maxCards = 5;
+    public List<Ingredient> availableIngredients;
+    public List<Ingredient> usedIngredients;
+    public CardPositionManager cardPositionManager;
 
     void Start()
     {
-        // Stelle sicher, dass das GameObject mit dem Tag "Fridge" versehen ist
-        if (gameObject.tag != "Fridge")
-        {
-            Debug.LogError("Das GameObject hat nicht den Tag 'Fridge'.");
-        }
-
-        // Erstelle zu Spielbeginn fünf Karten
-        for (int i = 0; i < maxCards; i++)
-        {
-            CreateCard();
-        }
+        LoadIngredients();
+        usedIngredients = new List<Ingredient>();
     }
 
-    void OnMouseDown()
+    void LoadIngredients()
     {
-        // Überprüfe, ob die maximale Anzahl an Karten bereits erreicht ist
-        if (currentCardCount < maxCards)
+        TextAsset jsonFile = Resources.Load<TextAsset>("jsonStorage/rezepte");
+        if (jsonFile != null)
         {
-            Debug.Log("Deck wurde geklickt. Karten werden angezeigt.");
-            CreateCard();
+            RecipeData recipeData = JsonConvert.DeserializeObject<RecipeData>(jsonFile.text);
+            availableIngredients = recipeData.gerichte
+                .Where(g => g.typ == "zutat")
+                .Select(g => new Ingredient { name = g.name, bild = g.bild })
+                .ToList();
+            Debug.Log("Loaded ingredients: " + string.Join(", ", availableIngredients.Select(i => i.name)));
         }
         else
         {
-            Debug.Log("Maximale Anzahl an Karten erreicht.");
+            Debug.LogError("Cannot find rezepte.json file in Resources!");
         }
     }
 
-    void CreateCard()
+    public void OnClick()
     {
-        // Erstelle eine neue Karte
-        GameObject newCard = Instantiate(Card);
-        newCard.transform.SetParent(handCardsParent, false);
-        // Setze die Karte als Kind des Handkartenbereichs
-        if (handCardsParent != null)
+        if (handCardsParent.childCount < maxCards && availableIngredients.Count > 0 && cardPositionManager.ArePositionsAvailable())
         {
-            newCard.transform.SetParent(handCardsParent, false);
-            // Stelle sicher, dass die Karte korrekt positioniert wird
-            RectTransform rectTransform = newCard.GetComponent<RectTransform>();
-            if (rectTransform != null)
+            CreateIngredientCard();
+        }
+        else
+        {
+            if (!cardPositionManager.ArePositionsAvailable())
             {
-                // Setze die Position der Karte
-                rectTransform.anchoredPosition = new Vector2(currentCardCount * 150, 0); // Beispielposition, anpassen nach Bedarf
-                rectTransform.localScale = Vector3.one; // Behalte die ursprüngliche Skalierung bei
+                Debug.LogWarning("No available positions for new card.");
             }
             else
             {
-                Debug.LogError("RectTransform nicht gefunden an der neuen Karte.");
+                Debug.LogWarning("Max cards reached or no available ingredients.");
             }
+        }
+    }
+
+    void CreateIngredientCard()
+    {
+        if (!cardPositionManager.ArePositionsAvailable())
+        {
+            Debug.LogWarning("No positions available for new card.");
+            return;
+        }
+
+        Ingredient ingredient = availableIngredients[Random.Range(0, availableIngredients.Count)];
+        availableIngredients.Remove(ingredient);
+        usedIngredients.Add(ingredient);
+
+        GameObject cardObject = Instantiate(cardPrefab, handCardsParent);
+        Card card = cardObject.GetComponent<Card>();
+        card.cardPositionManager = this.cardPositionManager;
+        card.SetText(ingredient.name);
+        card.SetImage("cardImages/" + ingredient.bild);
+
+        RectTransform cardRectTransform = cardObject.GetComponent<RectTransform>();
+        cardRectTransform.localScale = Vector3.one;
+
+        Vector2 nextPosition = cardPositionManager.GetNextAvailablePosition();
+        if (nextPosition != Vector2.zero)
+        {
+            cardRectTransform.anchoredPosition = nextPosition;
+            cardPositionManager.AssignCardToPosition(card, nextPosition);
+            Debug.Log($"Spawned card at position {nextPosition}");
         }
         else
         {
-            Debug.LogError("HandCardsParent ist nicht zugewiesen.");
+            Destroy(cardObject);
+            Debug.LogWarning("No available positions for new card.");
         }
-
-        currentCardCount++;
     }
+
+    public void ReleaseCardPosition(Card card)
+    {
+        cardPositionManager.ReleasePosition(card);
+    }
+
+    public void OnPositionReleased()
+    {
+        Debug.Log("FridgeController notified of released position.");
+    }
+}
+
+public class Ingredient
+{
+    public string name;
+    public string bild;
+}
+
+[System.Serializable]
+public class Recipe
+{
+    public string name;
+    public List<string> zutaten;
+    public string typ;
+    public string bild;
+}
+
+[System.Serializable]
+public class RecipeData
+{
+    public List<Recipe> gerichte;
 }
