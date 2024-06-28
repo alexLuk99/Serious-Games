@@ -59,7 +59,7 @@ public class CookingPot : MonoBehaviour
         {
             potText.text += ingredient.name + "\n";
         }
-        Debug.Log("Current ingredients in pot: " + string.Join(", ", ingredientsInPot.Select(i => i.name)));
+        Debug.Log("Zutaten im Topf: " + string.Join(", ", ingredientsInPot.Select(i => i.name)));
     }
 
     public void OnCookButtonClick()
