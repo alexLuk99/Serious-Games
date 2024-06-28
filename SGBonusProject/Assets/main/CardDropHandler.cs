@@ -31,6 +31,7 @@ public class CardDropHandler : MonoBehaviour, IDropHandler
                     Destroy(card.gameObject);
                     break;
                 case DropZone.Customer:
+                Debug.Log("Checking order for " + card.titleText.text);
                     if (gameState.CheckOrder(card.titleText.text))
                     {
                         cardPositionManager.ReleasePosition(card);

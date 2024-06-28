@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using Newtonsoft.Json;
+using UnityEngine.UI;
 
 public class GameState : MonoBehaviour
 {
@@ -12,11 +13,13 @@ public class GameState : MonoBehaviour
     public ScoreManager scoreManager;
     public FridgeController fridgeController;
     public CookingPot cookingPot;
+    public Text punishmentText;
 
     private Customer currentCustomer;
     private float currentTimer;
     private bool orderCompleted;
     private TextBubble textBubble;
+    private int currentPunishment;
 
     void Start()
     {
@@ -71,8 +74,10 @@ public class GameState : MonoBehaviour
         {
             currentCustomer = customers[0];
             currentTimer = currentCustomer.timer;
+            currentPunishment = currentCustomer.punishment;
+            UpdatePunishmentText();
             customers.RemoveAt(0);
-            textBubble.SetText(currentCustomer.name, currentCustomer.instructions, currentCustomer.order, currentTimer);
+            textBubble.SetText(currentCustomer.name, currentCustomer.instructions, currentCustomer.order, currentTimer, currentPunishment.ToString());
         }
     }
 
@@ -86,7 +91,7 @@ public class GameState : MonoBehaviour
 
     public void FailOrder()
     {
-        scoreManager.UpdateScore(-1);
+        scoreManager.UpdateScore(-currentPunishment);
         StartCoroutine(SpawnNextCustomer());
         currentCustomer = null;
     }
@@ -95,10 +100,32 @@ public class GameState : MonoBehaviour
     {
         if (currentCustomer != null && dish == currentCustomer.order)
         {
+            Debug.Log("Order completed!");
             orderCompleted = true;
+            currentPunishment = 0;
+            UpdatePunishmentText();
             return true;
         }
+        else if (currentCustomer != null)
+
+        {
+            Debug.Log("Less punishment");
+            currentPunishment = Mathf.Max(currentPunishment - 2, 0);
+            UpdatePunishmentText();
+            return true; // Rückgabewert ändern, damit die Karte entfernt wird
+        }
         return false;
+    }
+
+    private bool IsIngredient(string dish)
+    {
+        return fridgeController.availableIngredients.Exists(ingredient => ingredient.name == dish);
+    }
+
+    private void UpdatePunishmentText()
+    {
+        punishmentText.text = $"Punishment: {currentPunishment}";
+        textBubble.UpdatePunishmentText(currentPunishment.ToString());
     }
 }
 
@@ -108,6 +135,7 @@ public class Customer
     public string instructions;
     public string order;
     public float timer;
+    public int punishment;
 }
 
 public class CustomerList

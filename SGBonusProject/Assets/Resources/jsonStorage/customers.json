@@ -4,19 +4,22 @@
         "name": "Goblin",
         "instructions": "Mach mir einen KUCHEN!!!",
         "order": "Kuchen",
-        "timer": 20
+        "timer": 20,
+        "punishment": 10
       },
       {
         "name": "Orc",
         "instructions": "Hühnchen mit Reis",
         "order": "Rührei",
-        "timer": 20
+        "timer": 20,
+        "punishment": 10
       },
       {
         "name": "Dragon",
         "instructions": "Kuchen in Pfanne bidde",
         "order": "Pfannkuchen",
-        "timer": 20
+        "timer": 20,
+        "punishment": 10
       }
     ]
   }
