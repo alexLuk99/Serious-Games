@@ -1,143 +1,116 @@
 {
     "gerichte": [
       {
-        "name": "Kuchen",
+        "name": "Chili Sin Carne",
         "zutaten": [
-          "Mehl",
-          "Eier",
-          "Zucker",
-          "Butter"
+          "Reis",
+          "Tomaten",
+          "Kidneybohnen"
         ],
         "typ": "gericht",
-        "bild": "1"
+        "bild": "Chilli sin carne"
       },
       {
-        "name": "Test",
+        "name": "Curry",
         "zutaten": [
-          "Milch"
+          "Reis",
+          "Currypaste",
+          "Kokosmilch",
+          "Paprika"
         ],
         "typ": "gericht",
-        "bild": "1"
+        "bild": "Suppe"
       },
       
       {
-        "name": "Kuchen",
+        "name": "Wraps",
         "zutaten": [
-          "Mehl",
-          "Eier",
-          "Zucker",
-          "Butter"
+          "Trotillias",
+          "Hummus",
+          "Tomaten",
+          "Paprika"
         ],
         "typ": "gericht",
         "bild": "1"
       },
       {
-        "name": "Kuchen",
-        "zutaten": [
-          "Mehl",
-          "Eier",
-          "Zucker",
-          "Butter"
-        ],
-        "typ": "gericht",
-        "bild": "1"
-      },
-      {
-        "name": "Käse",
+        "name": "Reis",
         "zutaten": [],
         "typ": "zutat",
-        "bild": "2"
-      },
-      {
-        "name": "Milch",
-        "zutaten": [],
-        "typ": "zutat",
-        "bild": "2"
-      },
-      {
-        "name": "Mehl",
-        "zutaten": [],
-        "typ": "zutat",
-        "bild": "1"
-      },
-      {
-        "name": "Eier",
-        "zutaten": [],
-        "typ": "zutat",
-        "bild": "1"
-      },
-      {
-        "name": "Zucker",
-        "zutaten": [],
-        "typ": "zutat",
-        "bild": "1"
-      },
-      
-      {
-        "name": "Butter",
-        "zutaten": [],
-        "typ": "zutat",
-        "bild": "1"
-      },
-      {
-        "name": "Salz",
-        "zutaten": [],
-        "typ": "zutat",
-        "bild": "1"
-      },
-      {
-        "name": "Pfeffer",
-        "zutaten": [],
-        "typ": "zutat",
-        "bild": "1"
-      },
-      {
-        "name": "Olivenöl",
-        "zutaten": [],
-        "typ": "zutat",
-        "bild": "1"
+        "bild": "Reis"
       },
       {
         "name": "Tomaten",
         "zutaten": [],
         "typ": "zutat",
-        "bild": "1"
+        "bild": "Tomaten"
       },
       {
-        "name": "Zwiebeln",
+        "name": "Kidneybohnen",
         "zutaten": [],
         "typ": "zutat",
-        "bild": "1"
+        "bild": "Kidneybohnen"
       },
       {
-        "name": "Knoblauch",
+        "name": "Currypaste",
         "zutaten": [],
         "typ": "zutat",
-        "bild": "1"
+        "bild": "Currypaste"
       },
       {
-        "name": "Petersilie",
+        "name": "Kokosmilch",
         "zutaten": [],
         "typ": "zutat",
-        "bild": "1"
+        "bild": "Kokusmilch"
+      },
+      
+      {
+        "name": "Paprika",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Paprika"
       },
       {
-        "name": "Basilikum",
+        "name": "Wraps",
         "zutaten": [],
         "typ": "zutat",
-        "bild": "1"
+        "bild": "Tortillija"
       },
       {
-        "name": "Zitrone",
+        "name": "Hummus",
         "zutaten": [],
         "typ": "zutat",
-        "bild": "1"
+        "bild": "Humus"
       },
       {
-        "name": "Sahne",
+        "name": "Milch",
         "zutaten": [],
         "typ": "zutat",
-        "bild": "1"
+        "bild": "Milch"
+      },
+      {
+        "name": "Käse",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Käse"
+      },
+      {
+        "name": "Hünchen",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Hünchen"
+      },
+      {
+        "name": "Apfel",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Apfel"
+      },
+      {
+        "name": "Erdnussbutter",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Erdnussbutter"
       }
     ]
   }
