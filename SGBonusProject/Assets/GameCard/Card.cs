@@ -22,6 +22,7 @@ public class Card : MonoBehaviour
         {
             cardPositionManager = FindObjectOfType<CardPositionManager>();
         }
+
     }
 
     public void SetText(string newText)
@@ -36,10 +37,14 @@ public class Card : MonoBehaviour
     {
         if (cardImage != null)
         {
+            Debug.Log("Loading image from path: " + imagePath); // Debug-Ausgabe
             Sprite newSprite = Resources.Load<Sprite>(imagePath);
             if (newSprite != null)
             {
                 cardImage.sprite = newSprite;
+                cardImage.enabled = true; // Sicherstellen, dass das Bild aktiviert ist
+                cardImage.color = Color.white; // Sicherstellen, dass die Farbe nicht transparent ist
+                Debug.Log("Image loaded successfully: " + imagePath); // Debug-Ausgabe
             }
             else
             {
