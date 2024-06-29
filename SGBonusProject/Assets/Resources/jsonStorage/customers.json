@@ -3,22 +3,22 @@
       {
         "name": "Goblin",
         "instructions": "Ich hätte gerne Chili Sin Carne",
-        "order": "Chili sin carne",
-        "timer": 20,
+        "order": "Chili Sin Carne",
+        "timer": 50,
         "punishment": 10
       },
       {
         "name": "Orc",
         "instructions": "Ich hätte gerne Curry",
         "order": "Curry",
-        "timer": 20,
+        "timer": 45,
         "punishment": 15
       },
       {
         "name": "Dragon",
         "instructions": "Ich hätte gerne Wraps",
         "order": "Wraps",
-        "timer": 20,
+        "timer": 40,
         "punishment": 20
       }
     ]
