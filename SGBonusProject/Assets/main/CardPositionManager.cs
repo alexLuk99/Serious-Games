@@ -7,7 +7,7 @@ public class CardPositionManager : MonoBehaviour
     public Vector2[] cardPositions;
     private Dictionary<Vector2, Card> positionCardMap = new Dictionary<Vector2, Card>();
 
-    void Start()
+    void Awake()
     {
         InitializePositions();
     }

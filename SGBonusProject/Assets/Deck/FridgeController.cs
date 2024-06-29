@@ -17,6 +17,7 @@ public class FridgeController : MonoBehaviour
     {
         LoadIngredients();
         usedIngredients = new List<Ingredient>();
+        DrawInitialHand();
     }
 
     void LoadIngredients()
@@ -99,6 +100,14 @@ public class FridgeController : MonoBehaviour
     public void OnPositionReleased()
     {
         Debug.Log("FridgeController notified of released position.");
+    }
+
+    void DrawInitialHand()
+    {
+        for (int i = 0; i < maxCards; i++)
+        {
+            CreateIngredientCard();
+        }
     }
 }
 
