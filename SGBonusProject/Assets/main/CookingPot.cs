@@ -64,6 +64,8 @@ public class CookingPot : MonoBehaviour
 
     public void OnCookButtonClick()
     {
+        AudioManager.Instance.PlaySound("click1");
+
         string cookedDish;
         if (CookRecipe(out cookedDish))
         {

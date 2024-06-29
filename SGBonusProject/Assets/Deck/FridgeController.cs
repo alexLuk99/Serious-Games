@@ -40,9 +40,11 @@ public class FridgeController : MonoBehaviour
 
     public void OnClick()
     {
+
         if (handCardsParent.childCount < maxCards && availableIngredients.Count > 0 && cardPositionManager.ArePositionsAvailable())
         {
             CreateIngredientCard();
+            AudioManager.Instance.PlaySound("rollover1");
         }
         else
         {

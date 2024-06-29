@@ -25,9 +25,11 @@ public class CardDropHandler : MonoBehaviour, IDropHandler
             {
                 case DropZone.Pot:
                     cookingPot.OnDropCard(card);
+                    AudioManager.Instance.PlaySound("switch2");
                     break;
                 case DropZone.Trash:
                     cardPositionManager.ReleasePosition(card);
+                    AudioManager.Instance.PlaySound("switch2");
                     Destroy(card.gameObject);
                     break;
                 case DropZone.Customer:
@@ -35,6 +37,7 @@ public class CardDropHandler : MonoBehaviour, IDropHandler
                     if (gameState.CheckOrder(card.titleText.text))
                     {
                         cardPositionManager.ReleasePosition(card);
+                        AudioManager.Instance.PlaySound("switch2");
                         Destroy(card.gameObject);
                     }
                     break;
