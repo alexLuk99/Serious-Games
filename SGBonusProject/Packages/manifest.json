@@ -3,6 +3,7 @@
     "com.unity.textmeshpro": "3.0.9",
     "com.unity.ugui": "1.0.0",
     "jillejr.newtonsoft.json-for-unity": "https://github.com/jilleJr/Newtonsoft.Json-for-Unity.git#upm",
+    "com.unity.modules.audio": "1.0.0",
     "com.unity.modules.physics": "1.0.0",
     "com.unity.modules.physics2d": "1.0.0"
   }

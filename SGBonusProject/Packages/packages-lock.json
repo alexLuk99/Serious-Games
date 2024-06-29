@@ -25,6 +25,12 @@
       "dependencies": {},
       "hash": "f2c6cb09817832dccd0600f291053d8d55298ee9"
     },
+    "com.unity.modules.audio": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
     "com.unity.modules.imgui": {
       "version": "1.0.0",
       "depth": 1,

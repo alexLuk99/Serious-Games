@@ -1,116 +1,127 @@
 {
-    "gerichte": [
+  "gerichte": [
       {
-        "name": "Chili Sin Carne",
-        "zutaten": [
-          "Reis",
-          "Tomaten",
-          "Kidneybohnen"
-        ],
-        "typ": "gericht",
-        "bild": "Chilli sin carne"
+          "name": "Chili Sin Carne",
+          "zutaten": [
+              "Reis",
+              "Tomaten",
+              "Kidneybohnen"
+          ],
+          "typ": "gericht",
+          "bild": "Chilli sin carne"
       },
       {
-        "name": "Curry",
-        "zutaten": [
-          "Reis",
-          "Currypaste",
-          "Kokosmilch",
-          "Paprika"
-        ],
-        "typ": "gericht",
-        "bild": "Suppe"
-      },
-      
-      {
-        "name": "Wraps",
-        "zutaten": [
-          "Trotillias",
-          "Hummus",
-          "Tomaten",
-          "Paprika"
-        ],
-        "typ": "gericht",
-        "bild": "Buritto"
+          "name": "Curry",
+          "zutaten": [
+              "Reis",
+              "Currypaste",
+              "Kokosmilch",
+              "Paprika"
+          ],
+          "typ": "gericht",
+          "bild": "Suppe"
       },
       {
-        "name": "Reis",
-        "zutaten": [],
-        "typ": "zutat",
-        "bild": "Reis"
+          "name": "Wraps",
+          "zutaten": [
+              "Trotillias",
+              "Hummus",
+              "Tomaten",
+              "Paprika"
+          ],
+          "typ": "gericht",
+          "bild": "Buritto"
       },
       {
-        "name": "Tomaten",
-        "zutaten": [],
-        "typ": "zutat",
-        "bild": "Tomaten"
+          "name": "Reis",
+          "zutaten": [],
+          "typ": "zutat",
+          "bild": "Reis",
+          "vegan": true
       },
       {
-        "name": "Kidneybohnen",
-        "zutaten": [],
-        "typ": "zutat",
-        "bild": "Kidneybohnen"
+          "name": "Tomaten",
+          "zutaten": [],
+          "typ": "zutat",
+          "bild": "Tomaten",
+          "vegan": true
       },
       {
-        "name": "Currypaste",
-        "zutaten": [],
-        "typ": "zutat",
-        "bild": "Currypaste"
+          "name": "Kidneybohnen",
+          "zutaten": [],
+          "typ": "zutat",
+          "bild": "Kidneybohnen",
+          "vegan": true
       },
       {
-        "name": "Kokosmilch",
-        "zutaten": [],
-        "typ": "zutat",
-        "bild": "Kokusmilch"
-      },
-      
-      {
-        "name": "Paprika",
-        "zutaten": [],
-        "typ": "zutat",
-        "bild": "Paprika"
+          "name": "Currypaste",
+          "zutaten": [],
+          "typ": "zutat",
+          "bild": "Currypaste",
+          "vegan": true
       },
       {
-        "name": "Wraps",
-        "zutaten": [],
-        "typ": "zutat",
-        "bild": "Tortillija"
+          "name": "Kokosmilch",
+          "zutaten": [],
+          "typ": "zutat",
+          "bild": "Kokusmilch",
+          "vegan": true
       },
       {
-        "name": "Hummus",
-        "zutaten": [],
-        "typ": "zutat",
-        "bild": "Humus"
+          "name": "Paprika",
+          "zutaten": [],
+          "typ": "zutat",
+          "bild": "Paprika",
+          "vegan": true
       },
       {
-        "name": "Milch",
-        "zutaten": [],
-        "typ": "zutat",
-        "bild": "Milch"
+          "name": "Wraps",
+          "zutaten": [],
+          "typ": "zutat",
+          "bild": "Tortillija",
+          "vegan": true
       },
       {
-        "name": "Käse",
-        "zutaten": [],
-        "typ": "zutat",
-        "bild": "Käse"
+          "name": "Hummus",
+          "zutaten": [],
+          "typ": "zutat",
+          "bild": "Humus",
+          "vegan": true
       },
       {
-        "name": "Hünchen",
-        "zutaten": [],
-        "typ": "zutat",
-        "bild": "Hünchen"
+          "name": "Milch",
+          "zutaten": [],
+          "typ": "zutat",
+          "bild": "Milch",
+          "vegan": false
       },
       {
-        "name": "Apfel",
-        "zutaten": [],
-        "typ": "zutat",
-        "bild": "Apfel"
+          "name": "Käse",
+          "zutaten": [],
+          "typ": "zutat",
+          "bild": "Käse",
+          "vegan": false
       },
       {
-        "name": "Erdnussbutter",
-        "zutaten": [],
-        "typ": "zutat",
-        "bild": "Erdnussbutter"
+          "name": "Hünchen",
+          "zutaten": [],
+          "typ": "zutat",
+          "bild": "Hünchen",
+          "vegan": false
+      },
+      {
+          "name": "Apfel",
+          "zutaten": [],
+          "typ": "zutat",
+          "bild": "Apfel",
+          "vegan": true
+      },
+      {
+          "name": "Erdnussbutter",
+          "zutaten": [],
+          "typ": "zutat",
+          "bild": "Erdnussbutter",
+          "vegan": true
       }
-    ]
-  }
+  ]
+}
