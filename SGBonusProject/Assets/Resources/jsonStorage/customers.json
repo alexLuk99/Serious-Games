@@ -9,8 +9,36 @@
       },
       {
         "name": "Orc",
-        "instructions": "Ich hätte gerne Curry",
+        "instructions": "Einmal Curry, bitte",
         "order": "Curry",
+        "timer": 45,
+        "punishment": 15
+      },
+      {
+        "name": "Prince",
+        "instructions": "Ich hätte gerne Schokopudding",
+        "order": "Schokopudding",
+        "timer": 45,
+        "punishment": 15
+      },
+      {
+        "name": "Nessi",
+        "instructions": "Ich esse am liebsten Chili Sin Carne",
+        "order": "Chili Sin Carne",
+        "timer": 40,
+        "punishment": 10
+      },
+      {
+        "name": "Gandalf",
+        "instructions": "Eine Maultaschenpfanne wäre jetzt super",
+        "order": "Vegane Maultaschenpfanne",
+        "timer": 40,
+        "punishment": 15
+      },
+      {
+        "name": "Princess",
+        "instructions": "Hmmm... Ofengemüse!",
+        "order": "Ofengemüse",
         "timer": 45,
         "punishment": 15
       },
@@ -18,6 +46,13 @@
         "name": "Dragon",
         "instructions": "Ich hätte gerne Wraps",
         "order": "Wraps",
+        "timer": 40,
+        "punishment": 20
+      },
+      {
+        "name": "Orc",
+        "instructions": "Das Curry vorhin war super, gleich nochmal bitte!",
+        "order": "Curry",
         "timer": 40,
         "punishment": 20
       }

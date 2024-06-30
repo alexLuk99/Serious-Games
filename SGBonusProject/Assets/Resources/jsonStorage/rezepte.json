@@ -36,12 +36,93 @@
           "vegan": true
       },
       {
+        "name": "Schokopudding",
+        "zutaten": [
+            "Kakaopulver",
+            "Sojamilch",
+            "Zucker"
+        ],
+        "typ": "gericht",
+        "bild": "Schokopudding"
+      },
+      {
+        "name": "Vegane Maultaschenpfanne",
+        "zutaten": [
+            "Vegane Maultaschen",
+            "Paprika",
+            "Zwiebeln"
+        ],
+        "typ": "gericht",
+        "bild": "Vegane Maultaschenpfanne"
+      },
+      {
+        "name": "Ofengemüse",
+        "zutaten": [
+            "Kartoffeln",
+            "Paprika",
+            "Zwiebeln",
+            "Kidneybohnen"
+        ],
+        "typ": "gericht",
+        "bild": "Ofengemüse"
+      },
+      {
+          "name": "Kartoffeln",
+          "zutaten": [],
+          "typ": "zutat",
+          "bild": "Kartoffeln",
+          "vegan": true
+      },
+      {
+          "name": "Maultaschen",
+          "zutaten": [],
+          "typ": "zutat",
+          "bild": "Maultaschen",
+          "vegan": false
+      },
+      {
+          "name": "Vegane Maultaschen",
+          "zutaten": [],
+          "typ": "zutat",
+          "bild": "Vegane Maultaschen",
+          "vegan": true
+      },
+      {
+        "name": "Vegane Maultaschen",
+        "zutaten": [],
+        "typ": "gericht",
+        "zutat": "Maultaschen",
+        "bild": "Vegane Maultaschen",
+        "vegan": true
+    },
+      {
+          "name": "Zwiebeln",
+          "zutaten": [],
+          "typ": "zutat",
+          "bild": "Zwiebeln",
+          "vegan": true
+      },
+      {
+          "name": "Kakaopulver",
+          "zutaten": [],
+          "typ": "zutat",
+          "bild": "Kakaopulver",
+          "vegan": true
+      },
+      {
         "name": "Sojamilch",
         "zutaten": [
             "Milch"
         ],
         "typ": "gericht",
         "bild": "Sojamilch",
+        "vegan": true
+    },
+    {
+        "name": "Zucker",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Zucker",
         "vegan": true
     },
     {
