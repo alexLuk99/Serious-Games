@@ -149,6 +149,7 @@ public class CookingPot : MonoBehaviour
             if (nextPosition != Vector2.zero)
             {
                 card.GetComponent<RectTransform>().anchoredPosition = nextPosition;
+                cardPositionManager.AssignCardToPosition(cardScript, nextPosition);
                 Debug.Log($"Created a new card for the cooked dish at position {nextPosition}: {cookedDish}");
             }
             else
