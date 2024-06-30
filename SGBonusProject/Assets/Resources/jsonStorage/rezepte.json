@@ -85,6 +85,13 @@
         "bild": "Honig",
         "vegan": false
     },
+    {
+        "name": "Honig",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Honig",
+        "vegan": false
+    },
       {
           "name": "Reis",
           "zutaten": [],
@@ -169,6 +176,13 @@
           "bild": "Hünchen",
           "vegan": false
       },
+      {
+        "name": "Hünchen",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Hünchen",
+        "vegan": false
+    },
       {
           "name": "Apfel",
           "zutaten": [],
