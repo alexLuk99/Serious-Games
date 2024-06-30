@@ -8,7 +8,8 @@
               "Kidneybohnen"
           ],
           "typ": "gericht",
-          "bild": "Chilli sin carne"
+          "bild": "Chilli sin carne",
+          "vegan": true
       },
       {
           "name": "Curry",
@@ -19,7 +20,8 @@
               "Paprika"
           ],
           "typ": "gericht",
-          "bild": "Suppe"
+          "bild": "Suppe",
+          "vegan": true
       },
       {
           "name": "Wraps",
@@ -30,8 +32,59 @@
               "Paprika"
           ],
           "typ": "gericht",
-          "bild": "Buritto"
+          "bild": "Buritto",
+          "vegan": true
       },
+      {
+        "name": "Sojamilch",
+        "zutaten": [
+            "Milch"
+        ],
+        "typ": "gericht",
+        "bild": "Sojamilch",
+        "vegan": true
+    },
+    {
+        "name": "Veganer Käse",
+        "zutaten": [
+            "Käse"
+        ],
+        "typ": "gericht",
+        "bild": "Verganer Käse",
+        "vegan": true
+    },
+    {
+        "name": "Vegane Butter",
+        "zutaten": [
+            "Butter"
+        ],
+        "typ": "gericht",
+        "bild": "Vegane Butter",
+        "vegan": true
+    },
+    {
+        "name": "Ahornsirup",
+        "zutaten": [
+            "Honig"
+        ],
+        "typ": "gericht",
+        "bild": "Achornsirup",
+        "vegan": true
+    },
+    {
+        "name": "Butter",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Butter",
+        "vegan": false
+    },
+    {
+        "name": "Honig",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Honig",
+        "vegan": false
+    },
       {
           "name": "Reis",
           "zutaten": [],
@@ -46,6 +99,13 @@
           "bild": "Tomaten",
           "vegan": true
       },
+      {
+        "name": "Tomaten",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Tomaten",
+        "vegan": true
+    },
       {
           "name": "Kidneybohnen",
           "zutaten": [],

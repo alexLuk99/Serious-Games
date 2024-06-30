@@ -14,6 +14,7 @@ public class CookingPot : MonoBehaviour
     public CardPositionManager cardPositionManager;
 
     private List<Ingredient> ingredientsInPot = new List<Ingredient>();
+    private List<Recipe> dishesInPot = new List<Recipe>();
     private Dictionary<Ingredient, Vector2> ingredientPositions = new Dictionary<Ingredient, Vector2>();
 
     void Start()
@@ -40,14 +41,23 @@ public class CookingPot : MonoBehaviour
 
     public void OnDropCard(Card card)
     {
+        // Überprüfen, ob die Karte eine Zutat oder ein Gericht ist
         Ingredient ingredient = fridgeController.usedIngredients.Find(i => i.name == card.titleText.text);
+        Recipe dish = availableRecipes.Find(r => r.name == card.titleText.text);
+
         if (ingredient != null)
         {
             ingredientsInPot.Add(ingredient);
             ingredientPositions[ingredient] = card.GetComponent<RectTransform>().anchoredPosition;
-            // Die ReleasePosition-Methode wird automatisch aufgerufen, wenn die Karte zerstört wird
             UpdatePotText();
             Debug.Log($"Added {ingredient.name} to the pot.");
+            Destroy(card.gameObject);
+        }
+        else if (dish != null)
+        {
+            dishesInPot.Add(dish);
+            UpdatePotText();
+            Debug.Log($"Added {dish.name} to the pot.");
             Destroy(card.gameObject);
         }
     }
@@ -59,7 +69,11 @@ public class CookingPot : MonoBehaviour
         {
             potText.text += ingredient.name + "\n";
         }
-        Debug.Log("Zutaten im Topf: " + string.Join(", ", ingredientsInPot.Select(i => i.name)));
+        foreach (var dish in dishesInPot)
+        {
+            potText.text += dish.name + "\n";
+        }
+        Debug.Log("Zutaten und Gerichte im Topf: " + string.Join(", ", ingredientsInPot.Select(i => i.name).Concat(dishesInPot.Select(d => d.name))));
     }
 
     public void OnCookButtonClick()
@@ -105,7 +119,7 @@ public class CookingPot : MonoBehaviour
         List<string> recipeIngredients = new List<string>(recipe.zutaten);
         Debug.Log("Checking if pot ingredients match the recipe: " + recipe.name);
         Debug.Log("Recipe requires ingredients: " + string.Join(", ", recipeIngredients));
-        Debug.Log("Current ingredients in pot: " + string.Join(", ", ingredientsInPot.Select(i => i.name)));
+        Debug.Log("Current ingredients in pot: " + string.Join(", ", ingredientsInPot.Select(i => i.name).Concat(dishesInPot.Select(d => d.name))));
 
         foreach (var ingredient in ingredientsInPot)
         {
@@ -121,6 +135,23 @@ public class CookingPot : MonoBehaviour
             }
         }
 
+        foreach (var dish in dishesInPot)
+        {
+            Debug.Log("Checking dish: " + dish.name);
+            foreach (var dishIngredient in dish.zutaten)
+            {
+                if (recipeIngredients.Contains(dishIngredient))
+                {
+                    recipeIngredients.Remove(dishIngredient);
+                    Debug.Log($"Ingredient {dishIngredient} from dish {dish.name} is in the recipe. Remaining: {string.Join(", ", recipeIngredients)}");
+                }
+                else
+                {
+                    Debug.Log($"Ingredient {dishIngredient} from dish {dish.name} is not in the recipe.");
+                }
+            }
+        }
+
         bool isMatch = recipeIngredients.Count == 0;
         Debug.Log("Recipe match result for " + recipe.name + ": " + isMatch);
         return isMatch;
@@ -129,6 +160,7 @@ public class CookingPot : MonoBehaviour
     private void ClearPot()
     {
         ingredientsInPot.Clear();
+        dishesInPot.Clear();
         ingredientPositions.Clear();
         UpdatePotText();
         Debug.Log("Cleared the pot and released positions.");
