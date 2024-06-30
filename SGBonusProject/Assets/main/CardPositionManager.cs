@@ -16,11 +16,11 @@ public class CardPositionManager : MonoBehaviour
     {
         cardPositions = new Vector2[]
         {
-            new Vector2(0, -50),
-            new Vector2(125, -50),
-            new Vector2(250, -50),
-            new Vector2(375, -50),
-            new Vector2(500, -50)
+            new Vector2(0, -85),
+            new Vector2(125, -85),
+            new Vector2(250, -85),
+            new Vector2(375, -85),
+            new Vector2(500, -85)
         };
 
         foreach (Vector2 position in cardPositions)
