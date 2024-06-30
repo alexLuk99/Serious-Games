@@ -117,7 +117,7 @@ public class Ingredient
 {
     public string name;
     public string bild;
-    public bool vegan; // neues Attribut für vegane Zutaten
+
 }
 
 [System.Serializable]
