@@ -59,7 +59,7 @@ public class FridgeController : MonoBehaviour
         }
     }
 
-    void CreateIngredientCard()
+    public void CreateIngredientCard()
     {
         if (!cardPositionManager.ArePositionsAvailable())
         {

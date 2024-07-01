@@ -2414,6 +2414,7 @@ MonoBehaviour:
   cookingPot: {fileID: 418743235}
   gameState: {fileID: 1877375734}
   cardPositionManager: {fileID: 2012733249}
+  fridgeController: {fileID: 1434516820}
 --- !u!61 &554200416
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4538,6 +4539,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5d6f4313f8682da4698c826433661710, type: 3}
   - {fileID: 8300000, guid: d0de18c5a80e06f46b06e41895530172, type: 3}
   - {fileID: 8300000, guid: 196746b01b82634438b078ddf60b01ae, type: 3}
+  - {fileID: 8300000, guid: a5c2fd3779f5e294fad3b775b4bd32bf, type: 3}
 --- !u!1001 &935950170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8078,6 +8080,7 @@ GameObject:
   - component: {fileID: 1668373647}
   - component: {fileID: 1668373648}
   - component: {fileID: 1668373650}
+  - component: {fileID: 1668373649}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -8177,6 +8180,19 @@ MonoBehaviour:
   titleText: {fileID: 2010348159}
   cardImage: {fileID: 2050533531}
   cardPositionManager: {fileID: 0}
+--- !u!114 &1668373649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668373643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1f2ae9f97a1a5d4e936cfdb1fa705f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cookingPot: {fileID: 418743235}
 --- !u!225 &1668373650
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -8441,6 +8457,7 @@ MonoBehaviour:
   cookingPot: {fileID: 418743235}
   gameState: {fileID: 1877375734}
   cardPositionManager: {fileID: 0}
+  fridgeController: {fileID: 0}
 --- !u!1 &1740776835
 GameObject:
   m_ObjectHideFlags: 0
@@ -8990,6 +9007,7 @@ MonoBehaviour:
   cookingPot: {fileID: 418743235}
   gameState: {fileID: 1877375734}
   cardPositionManager: {fileID: 2012733249}
+  fridgeController: {fileID: 0}
 --- !u!61 &1860494840
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9801,6 +9819,7 @@ MonoBehaviour:
   cookingPot: {fileID: 418743235}
   gameState: {fileID: 1877375734}
   cardPositionManager: {fileID: 2012733249}
+  fridgeController: {fileID: 0}
 --- !u!61 &2016522747
 BoxCollider2D:
   m_ObjectHideFlags: 0
