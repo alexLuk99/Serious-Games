@@ -43,6 +43,18 @@
             "Zucker"
         ],
         "typ": "gericht",
+        "bild": "Schokopudding",
+        "vegan": true
+      },
+      {
+        "name": "Schokopudding auf Milchbasis",
+        "zutaten": [
+            "Kakaopulver",
+            "Milch",
+            "Zucker"
+        ],
+        "typ": "gericht",
+        "vegan": false,
         "bild": "Schokopudding"
       },
       {
@@ -53,6 +65,18 @@
             "Zwiebeln"
         ],
         "typ": "gericht",
+        "vegan": true, 
+        "bild": "Vegane Maultaschenpfanne"
+      },
+      {
+        "name": "Maultaschenpfanne",
+        "zutaten": [
+            "Maultaschen",
+            "Paprika",
+            "Zwiebeln"
+        ],
+        "typ": "gericht",
+        "vegan": false, 
         "bild": "Vegane Maultaschenpfanne"
       },
       {
@@ -64,6 +88,7 @@
             "Kidneybohnen"
         ],
         "typ": "gericht",
+        "vegan": true,
         "bild": "Ofengemüse"
       },
       {
@@ -74,12 +99,26 @@
           "vegan": true
       },
       {
+        "name": "Kartoffeln",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Kartoffeln",
+        "vegan": true
+    },
+      {
           "name": "Maultaschen",
           "zutaten": [],
           "typ": "zutat",
           "bild": "Maultaschen",
           "vegan": false
       },
+      {
+        "name": "Maultaschen",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Maultaschen",
+        "vegan": false
+    },
       {
           "name": "Zwiebeln",
           "zutaten": [],
@@ -88,12 +127,33 @@
           "vegan": true
       },
       {
+        "name": "Zwiebeln",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Zwiebeln",
+        "vegan": true
+    },
+    {
+        "name": "Zwiebeln",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Zwiebeln",
+        "vegan": true
+    },
+      {
           "name": "Kakaopulver",
           "zutaten": [],
           "typ": "zutat",
           "bild": "Kakaopulver",
           "vegan": true
       },
+      {
+        "name": "Kakaopulver",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Kakaopulver",
+        "vegan": true
+    },
       {
         "name": "Sojamilch",
         "zutaten": [
@@ -108,6 +168,13 @@
         "zutaten": ["Maultaschen"],
         "typ": "gericht",
         "bild": "Vegane Maultaschen",
+        "vegan": true
+    },
+    {
+        "name": "Zucker",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Zucker",
         "vegan": true
     },
     {
@@ -173,6 +240,20 @@
           "vegan": true
       },
       {
+        "name": "Reis",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Reis",
+        "vegan": true
+    },
+    {
+        "name": "Reis",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Reis",
+        "vegan": true
+    },
+      {
           "name": "Tomaten",
           "zutaten": [],
           "typ": "zutat",
@@ -180,6 +261,13 @@
           "vegan": true
       },
       {
+        "name": "Tomaten",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Tomaten",
+        "vegan": true
+    },
+    {
         "name": "Tomaten",
         "zutaten": [],
         "typ": "zutat",
@@ -194,12 +282,33 @@
           "vegan": true
       },
       {
+        "name": "Kidneybohnen",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Kidneybohnen",
+        "vegan": true
+    },
+    {
+        "name": "Kidneybohnen",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Kidneybohnen",
+        "vegan": true
+    },
+      {
           "name": "Currypaste",
           "zutaten": [],
           "typ": "zutat",
           "bild": "Currypaste",
           "vegan": true
       },
+      {
+        "name": "Currypaste",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Currypaste",
+        "vegan": true
+    },
       {
           "name": "Kokosmilch",
           "zutaten": [],
@@ -208,12 +317,40 @@
           "vegan": true
       },
       {
+        "name": "Kokosmilch",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Kokusmilch",
+        "vegan": true
+    },
+      {
           "name": "Paprika",
           "zutaten": [],
           "typ": "zutat",
           "bild": "Paprika",
           "vegan": true
       },
+      {
+        "name": "Paprika",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Paprika",
+        "vegan": true
+    },
+    {
+        "name": "Paprika",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Paprika",
+        "vegan": true
+    },
+    {
+        "name": "Paprika",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Paprika",
+        "vegan": true
+    },
       {
           "name": "Wraps",
           "zutaten": [],
@@ -222,6 +359,13 @@
           "vegan": true
       },
       {
+        "name": "Wraps",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Tortillija",
+        "vegan": true
+    },
+      {
           "name": "Hummus",
           "zutaten": [],
           "typ": "zutat",
@@ -229,12 +373,26 @@
           "vegan": true
       },
       {
+        "name": "Hummus",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Humus",
+        "vegan": true
+    },
+      {
           "name": "Milch",
           "zutaten": [],
           "typ": "zutat",
           "bild": "Milch",
           "vegan": false
       },
+      {
+        "name": "Milch",
+        "zutaten": [],
+        "typ": "zutat",
+        "bild": "Milch",
+        "vegan": false
+    },
       {
           "name": "Käse",
           "zutaten": [],
