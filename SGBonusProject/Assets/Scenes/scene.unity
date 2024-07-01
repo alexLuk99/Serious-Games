@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028364, g: 0.22571364, b: 0.306922, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028341, g: 0.22571313, b: 0.30692148, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7097,7 +7097,6 @@ GameObject:
   - component: {fileID: 1668373645}
   - component: {fileID: 1668373647}
   - component: {fileID: 1668373648}
-  - component: {fileID: 1668373649}
   - component: {fileID: 1668373650}
   m_Layer: 5
   m_Name: Card
@@ -7198,18 +7197,6 @@ MonoBehaviour:
   titleText: {fileID: 2010348159}
   cardImage: {fileID: 2050533531}
   cardPositionManager: {fileID: 0}
---- !u!114 &1668373649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1668373643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afea1447277f14abcac4eb9eddf328db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!225 &1668373650
 CanvasGroup:
   m_ObjectHideFlags: 0

@@ -58,8 +58,10 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRectTransform, eventData.position, eventData.pressEventCamera, out Vector3 worldPoint);
         Vector3 newPosition = worldPoint + offset;
-        newPosition.z = rectTransform.position.z;
+        newPosition.z = rectTransform.position.z; // Ensure z position remains unchanged
         rectTransform.position = newPosition;
+
+        Debug.Log($"OnDrag: newPosition = {newPosition}, rectTransform.position = {rectTransform.position}");
 
         Vector3 movement = (Vector3)eventData.position - lastPosition;
         float speed = movement.magnitude / Time.deltaTime;
@@ -130,15 +132,18 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private IEnumerator SnapBackToOriginalPosition()
     {
         Vector2 startPosition = rectTransform.anchoredPosition;
+        float startZ = rectTransform.position.z;
         float elapsed = 0f;
 
         while (elapsed < snapBackDuration)
         {
             rectTransform.anchoredPosition = Vector2.Lerp(startPosition, originalPosition, elapsed / snapBackDuration);
+            rectTransform.position = new Vector3(rectTransform.position.x, rectTransform.position.y, startZ); // Ensure z position remains unchanged
             elapsed += Time.deltaTime;
             yield return null;
         }
 
         rectTransform.anchoredPosition = originalPosition;
+        rectTransform.position = new Vector3(rectTransform.position.x, rectTransform.position.y, startZ); // Ensure z position remains unchanged
     }
 }

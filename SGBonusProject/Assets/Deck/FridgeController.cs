@@ -127,6 +127,7 @@ public class Recipe
     public List<string> zutaten;
     public string typ;
     public string bild;
+    public bool vegan;
 }
 
 [System.Serializable]

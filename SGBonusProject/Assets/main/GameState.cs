@@ -107,14 +107,38 @@ public class GameState : MonoBehaviour
             return true;
         }
         else if (currentCustomer != null)
-
         {
-            Debug.Log("Less punishment");
-            currentPunishment = Mathf.Max(currentPunishment - 2, 0);
+            if (IsVegan(dish))
+            {
+                Debug.Log("Less punishment for vegan dish");
+                currentPunishment = Mathf.Max(currentPunishment - 2, 0);
+            }
+            else
+            {
+                Debug.Log("More punishment for non-vegan dish");
+                currentPunishment += 2;
+            }
             UpdatePunishmentText();
             return true; // Rückgabewert ändern, damit die Karte entfernt wird
         }
         return false;
+    }
+
+    private bool IsVegan(string dish)
+    {
+        TextAsset jsonFile = Resources.Load<TextAsset>("jsonStorage/rezepte");
+        if (jsonFile != null)
+        {
+            string dataAsJson = jsonFile.text;
+            RecipeList loadedData = JsonConvert.DeserializeObject<RecipeList>(dataAsJson);
+            Recipe recipe = loadedData.gerichte.Find(r => r.name == dish);
+            return recipe != null && recipe.vegan;
+        }
+        else
+        {
+            Debug.LogError("Cannot find rezepte file in Resources!");
+            return false;
+        }
     }
 
     private bool IsIngredient(string dish)
@@ -141,4 +165,12 @@ public class Customer
 public class CustomerList
 {
     public List<Customer> customers;
+}
+
+
+
+
+public class RecipeList
+{
+    public List<Recipe> gerichte;
 }
