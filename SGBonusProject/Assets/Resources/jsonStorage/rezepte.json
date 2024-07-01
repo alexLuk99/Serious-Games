@@ -81,21 +81,6 @@
           "vegan": false
       },
       {
-          "name": "Vegane Maultaschen",
-          "zutaten": [],
-          "typ": "zutat",
-          "bild": "Vegane Maultaschen",
-          "vegan": true
-      },
-      {
-        "name": "Vegane Maultaschen",
-        "zutaten": [],
-        "typ": "gericht",
-        "zutat": "Maultaschen",
-        "bild": "Vegane Maultaschen",
-        "vegan": true
-    },
-      {
           "name": "Zwiebeln",
           "zutaten": [],
           "typ": "zutat",
@@ -116,6 +101,13 @@
         ],
         "typ": "gericht",
         "bild": "Sojamilch",
+        "vegan": true
+    },
+    {
+        "name": "Vegane Maultaschen",
+        "zutaten": ["Maultaschen"],
+        "typ": "gericht",
+        "bild": "Vegane Maultaschen",
         "vegan": true
     },
     {
