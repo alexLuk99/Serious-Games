@@ -17,6 +17,15 @@ public class CookingPot : MonoBehaviour
     private List<Recipe> dishesInPot = new List<Recipe>();
     private Dictionary<Ingredient, Vector2> ingredientPositions = new Dictionary<Ingredient, Vector2>();
 
+        private Dictionary<string, string> transformationMap = new Dictionary<string, string>
+    {
+        { "Milch", "Sojamilch" },
+        { "Käse", "Veganer Käse" },
+        { "Butter", "Vegane Butter" },
+        { "Honig", "Ahornsirup" },
+        { "Maultaschen", "Vegane Maultaschen" },
+    };
+
     void Start()
     {
         LoadRecipes();
@@ -193,6 +202,43 @@ public class CookingPot : MonoBehaviour
         else
         {
             Debug.LogError("Recipe not found for cooked dish: " + cookedDish);
+        }
+    }
+    public void OnDoubleClick(Card card)
+    {
+        AudioManager.Instance.PlaySound("click1");
+        AudioManager.Instance.PlaySound("click1");
+
+        Ingredient ingredient = fridgeController.usedIngredients.Find(i => i.name == card.titleText.text);
+
+        if (ingredient != null && transformationMap.ContainsKey(ingredient.name))
+        {
+            string newIngredientName = transformationMap[ingredient.name];
+            string newIngredientImage = availableRecipes.Find(r => r.name == newIngredientName)?.bild;
+
+            if (!string.IsNullOrEmpty(newIngredientImage))
+            {
+                TransformIngredient(card, ingredient, newIngredientName, newIngredientImage);
+            }
+        }
+    }
+
+    private void TransformIngredient(Card card, Ingredient ingredient, string newIngredientName, string newIngredientImage)
+    {
+        card.SetText(newIngredientName);
+        card.SetImage("cardImages/" + newIngredientImage);
+
+        fridgeController.usedIngredients.Remove(ingredient);
+        fridgeController.usedIngredients.Add(new Ingredient { name = newIngredientName, bild = newIngredientImage });
+
+        Debug.Log($"{ingredient.name} wurde zu {newIngredientName} transformiert");
+
+        // Optional: Update pot text if the ingredient was already in the pot
+        if (ingredientsInPot.Contains(ingredient))
+        {
+            ingredientsInPot.Remove(ingredient);
+            ingredientsInPot.Add(new Ingredient { name = newIngredientName, bild = newIngredientImage });
+            UpdatePotText();
         }
     }
 }
