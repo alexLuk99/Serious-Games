@@ -6,6 +6,8 @@ public class Card : MonoBehaviour
     public Text titleText;
     public Image cardImage;
     public CardPositionManager cardPositionManager;
+    public string imageName; // Neue Variable zum Speichern des Bildnamens
+
 
     private void OnDestroy()
     {
@@ -44,6 +46,7 @@ public class Card : MonoBehaviour
                 cardImage.sprite = newSprite;
                 cardImage.enabled = true; // Sicherstellen, dass das Bild aktiviert ist
                 cardImage.color = Color.white; // Sicherstellen, dass die Farbe nicht transparent ist
+                imageName = imagePath; // Speichern des Bildnamens
                 Debug.Log("Image loaded successfully: " + imagePath); // Debug-Ausgabe
             }
             else

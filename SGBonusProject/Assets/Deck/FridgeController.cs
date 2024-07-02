@@ -111,6 +111,15 @@ public class FridgeController : MonoBehaviour
             CreateIngredientCard();
         }
     }
+
+    public void AddIngredient(string name, string bild)
+    {
+        string substringToRemove = "cardImages/";
+        bild = bild.Replace(substringToRemove, "");
+        Ingredient ingredient = new Ingredient { name = name, bild = bild };
+        availableIngredients.Add(ingredient);
+    }
+
 }
 
 public class Ingredient

@@ -33,6 +33,14 @@ public class CardDropHandler : MonoBehaviour, IDropHandler
                     cardPositionManager.ReleasePosition(card);
                     AudioManager.Instance.PlaySound("switch2");
                     Destroy(card.gameObject);
+                    if (new System.Random().NextDouble() < 0.5)
+                    {
+
+                            fridgeController.AddIngredient(
+                                card.titleText.text,
+                                card.imageName
+                                );
+                    }
                     fridgeController.CreateIngredientCard();
                     break;
                 case DropZone.Customer:
