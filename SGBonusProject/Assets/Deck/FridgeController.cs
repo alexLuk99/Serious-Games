@@ -12,11 +12,15 @@ public class FridgeController : MonoBehaviour
     public List<Ingredient> availableIngredients;
     public List<Ingredient> usedIngredients;
     public CardPositionManager cardPositionManager;
+    public List<Ingredient> allIngredients; // Add this line
+
 
     void Start()
     {
         LoadIngredients();
         usedIngredients = new List<Ingredient>();
+        allIngredients = new List<Ingredient>(availableIngredients); // Initialize allIngredients with available ingredients
+
         DrawInitialHand();
     }
 

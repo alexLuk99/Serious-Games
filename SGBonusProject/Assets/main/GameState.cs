@@ -87,6 +87,19 @@ public class GameState : MonoBehaviour
         StartCoroutine(SpawnNextCustomer());
         currentCustomer = null;
         orderCompleted = false;
+
+        // Add 10 random ingredients back into the fridge
+        for (int i = 0; i < 10; i++)
+        {
+            if (fridgeController.allIngredients.Count > 0)
+            {
+                int randomIndex = Random.Range(0, fridgeController.allIngredients.Count);
+                Ingredient randomIngredient = fridgeController.allIngredients[randomIndex];
+                fridgeController.AddIngredient(randomIngredient.name, randomIngredient.bild);
+            }
+        }
+
+        Debug.Log("Order completed! Add 10 random ingredients back into the fridge.");
     }
 
     public void FailOrder()
